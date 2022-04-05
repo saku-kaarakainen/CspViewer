@@ -4,35 +4,11 @@ import TextField from '@mui/material/TextField';
 import logo from './logo.svg';
 import './App.css';
 
-function App_Old() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-          </header>
-        <body>
-        </body>
-      </div>
-  );
-}
-
 const formatMinified = (value: string) => {
     const ret = value
         .replace(/(\r\n|\n|\r)/gm, ' ')
         .replace(/(\t)/gm, ' ')
         .replace(/\s+/g, ' ')
-        .replace(/; /gm, ';')
         .trim()
 
     return ret;
@@ -44,9 +20,6 @@ const formatPretty = (value: string) => {
         .replace(/ /gm, '\r\n\t')
 
     return ret;
-
-
-    return value
 }
 
 function App() {
@@ -55,8 +28,7 @@ function App() {
 
     function handleMinified(value: string) {
         const min = formatMinified(value)
-        const pretty = formatPretty(min)
-
+        const pretty = formatPretty(min.replace(/; /gm, ';'))
 
         setMinified(min)
         setPrettyPrint(pretty)
