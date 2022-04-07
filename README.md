@@ -1,6 +1,6 @@
 # CspViewer
-Just a small app which pretty prints CSP headers  
-
+Just a small app to meant to investigate CSP header. You can copy the content that you are investigating, and paste into the text field.
+saku-kaarakainen.github.io/cspviewer/
 
 # How to use it
 Just copy the value of your Response Headers/Content-Security-Policy into an either textbox, and see how does it look.
